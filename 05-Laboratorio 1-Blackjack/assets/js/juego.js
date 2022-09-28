@@ -12,13 +12,11 @@ let deck = [];
 let tipos = ['C','D','H','S'];
 let especiales = ['A','J','Q','K'];
 
-// Declarando variables de puntos
-let puntosJugador = 0, puntosComputadora = 0;
-
 // Referencial del HTML
 // Botones
 const btnPedir = document.querySelector("#btnPedir");
 const btnDetener = document.querySelector("#btnDetener");
+const btnNuevo = document.querySelector("#btnNuevo");
 
 // Divs
 const divCartasJugador = document.querySelector('#jugador-cartas');
@@ -26,6 +24,8 @@ const divCartasComputadora = document.querySelector('#computadora-cartas');
 
 // Small (puntos)
 const puntosHTML = document.querySelectorAll('small');
+// Declarando variables de puntos
+let puntosJugador = 0, puntosComputadora = 0;
 
 const crearDeck = () => {
     for(let i=2; i<=10; i++ ){
@@ -84,6 +84,18 @@ const turnoComputadora = (puntosMinimos) => {
         }
 
     }while( (puntosComputadora < puntosMinimos) && (puntosMinimos <= 21) );
+
+    setTimeout(() => {
+       if(puntosComputadora === puntosMinimos){
+        alert('Nadie gana :(');
+       }else if(puntosMinimos > 21){
+        alert('Computadora Gana :|');
+       }else if(puntosComputadora > 21){
+        alert('Jugador Gana :)');
+       }else{
+        alert('Computadora Gana :|');
+       } 
+    }, 30 );
 };
 
 // Eventos
@@ -99,10 +111,12 @@ btnPedir.addEventListener('click',() => {
     divCartasJugador.append(imgCarta);
 
     if(puntosJugador > 21){
+        btnDetener.disabled = true;
         console.warn('Lo siento mucho, perdite')
         btnPedir.disabled = true;
         turnoComputadora(puntosJugador);
     }else if(puntosJugador === 21){
+        btnDetener.disabled = true;
         console.log('21, genial haz ganado')
         btnPedir.disabled = true;
         turnoComputadora(puntosJugador);
@@ -114,4 +128,21 @@ btnDetener.addEventListener('click', () => {
     btnDetener.disabled = true;
 
     turnoComputadora(puntosJugador);
+});
+
+btnNuevo.addEventListener('click', () =>{
+    console.clear();
+
+    deck = crearDeck();
+
+    puntosJugador = 0;
+    puntosComputadora = 0;
+    puntosHTML[0].innerText = 0;
+    puntosHTML[1].innerText = 0;
+
+    divCartasComputadora.innerHTML = '';
+    divCartasJugador.innerHTML = '';
+
+    btnPedir.disabled = false;
+    btnDetener.disabled = false;
 });
