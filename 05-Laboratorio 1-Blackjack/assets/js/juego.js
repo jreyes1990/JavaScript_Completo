@@ -22,11 +22,7 @@
           btnNuevo = document.querySelector("#btnNuevo");
 
     // Divs
-    const divCartasJugador = document.querySelectorAll('.divCartas');
-    /*
-    const divCartasJugador = document.querySelector('#jugador-cartas'),
-          divCartasComputadora = document.querySelector('#computadora-cartas');
-    */
+    const divCartasJugadores = document.querySelectorAll('.divCartas');
 
     // Small (puntos)
     const puntosHTML = document.querySelectorAll('small');
@@ -87,17 +83,21 @@
         return puntosJugadores[turno];
     };
 
+    const crearCarta = (carta, turno) => {
+        const imgCarta = document.createElement('img');
+        imgCarta.src = `assets/cartas/${carta}.png`;
+        imgCarta.classList.add('carta');
+        divCartasJugadores[turno].append(imgCarta);
+    }
+
     //Turno de la computadora
     const turnoComputadora = (puntosMinimos) => {
+        let puntosComputadora = 0;
         do{
             const carta = pedirCarta();
 
-            acumularPuntos(carta, puntosJugadores.length-1);
-
-            const imgCarta = document.createElement('img');
-            imgCarta.src = `assets/cartas/${carta}.png`;
-            imgCarta.classList.add('carta');
-            divCartasComputadora.append(imgCarta);
+            puntosComputadora = acumularPuntos(carta, puntosJugadores.length-1);
+            crearCarta(carta, puntosJugadores.length-1);
 
             if( puntosMinimos > 21){
                 break;
@@ -124,10 +124,7 @@
 
         const puntosJugador = acumularPuntos(carta, 0);
 
-        const imgCarta = document.createElement('img');
-        imgCarta.src = `assets/cartas/${carta}.png`;
-        imgCarta.classList.add('carta');
-        divCartasJugador.append(imgCarta);
+        crearCarta(carta, 0);
 
         if(puntosJugador > 21){
             btnDetener.disabled = true;
@@ -159,8 +156,8 @@
         puntosHTML[0].innerText = 0;
         puntosHTML[1].innerText = 0;
 
-        divCartasComputadora.innerHTML = '';
-        divCartasJugador.innerHTML = '';
+        //divCartasComputadora.innerHTML = '';
+        //divCartasJugador.innerHTML = '';
 
         btnPedir.disabled = false;
         btnDetener.disabled = false;
