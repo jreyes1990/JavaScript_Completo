@@ -1,5 +1,5 @@
-(() => { //Patron modulo, es importante implementar el 'use strict' para este patron de modulo
-    'use strict' //Restricciones
+const miModulo = (() => { //Patron modulo, es importante implementar el 'use strict' para este patron de modulo
+    'use strict'; //Restricciones
 
 /*
 *  2C = Two of Clubs
@@ -33,11 +33,17 @@
     // Esta funcion inicializa el juego
     const inicializarJuego = ( numJugadores = 2) => {
         deck = crearDeck();
+        puntosJugadores = [];
 
         for(let i=0; i<numJugadores; i++){
             puntosJugadores.push(0);
         }
-        console.log({puntosJugadores})
+        
+        puntosHTML.forEach(elem => elem.innerText = 0);
+        divCartasJugadores.forEach(elem => elem.innerHTML = '');
+
+        btnPedir.disabled = false;
+        btnDetener.disabled = false;
     };
 
     const crearDeck = () => {
@@ -67,8 +73,6 @@
         return deck.pop();
     };
 
-    //pedirCarta();
-
     const valorCarta = ( carta ) => {
         const valor = carta.substring(0, carta.length - 1);
         
@@ -90,6 +94,23 @@
         divCartasJugadores[turno].append(imgCarta);
     }
 
+
+    const determinarGanador = () => {
+        const [puntosMinimos, puntosComputadora] = puntosJugadores;
+
+        setTimeout(() => {
+            if(puntosComputadora === puntosMinimos){
+                alert('Nadie gana :(');
+            }else if(puntosMinimos > 21){
+                alert('Computadora Gana :|');
+            }else if(puntosComputadora > 21){
+                alert('Jugador Gana :)');
+            }else{
+                alert('Computadora Gana :|');
+            } 
+        }, 30 );
+    }
+
     //Turno de la computadora
     const turnoComputadora = (puntosMinimos) => {
         let puntosComputadora = 0;
@@ -99,23 +120,9 @@
             puntosComputadora = acumularPuntos(carta, puntosJugadores.length-1);
             crearCarta(carta, puntosJugadores.length-1);
 
-            if( puntosMinimos > 21){
-                break;
-            }
-
         }while( (puntosComputadora < puntosMinimos) && (puntosMinimos <= 21) );
 
-        setTimeout(() => {
-        if(puntosComputadora === puntosMinimos){
-            alert('Nadie gana :(');
-        }else if(puntosMinimos > 21){
-            alert('Computadora Gana :|');
-        }else if(puntosComputadora > 21){
-            alert('Jugador Gana :)');
-        }else{
-            alert('Computadora Gana :|');
-        } 
-        }, 30 );
+        determinarGanador();
     };
 
     // Eventos
@@ -143,24 +150,19 @@
         btnPedir.disabled = true;
         btnDetener.disabled = true;
 
-        turnoComputadora(puntosJugador);
+        turnoComputadora(puntosJugadores[0]);
     });
 
     btnNuevo.addEventListener('click', () =>{
-        console.clear();
         inicializarJuego();
-        //deck = crearDeck();
-
-        //puntosJugador = 0;
-        //puntosComputadora = 0;
-        puntosHTML[0].innerText = 0;
-        puntosHTML[1].innerText = 0;
-
-        //divCartasComputadora.innerHTML = '';
-        //divCartasJugador.innerHTML = '';
-
-        btnPedir.disabled = false;
-        btnDetener.disabled = false;
     });
 
+    return {
+        nuevoJuego: inicializarJuego
+    };
+    
 })();
+
+
+// Compresion de codigo JavaScript :
+// https://www.toptal.com/developers/javascript-minifier
