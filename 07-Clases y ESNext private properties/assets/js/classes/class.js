@@ -11,7 +11,11 @@ class Persona {
     }
 
     set setComidaFavorita(comida){
-        this.comida = comida;
+        this.comida = comida.toUpperCase();
+    }
+
+    get getComidaFavorita(){
+        return `La comida favorita de ${this.nombre} es ${this.comida}`
     }
 
     quienSoy(){
@@ -32,3 +36,5 @@ console.log(iroman)
 console.log(spiderman)
 
 spiderman.setComidaFavorita = 'El pie de cereza de la tia May';
+
+console.log(spiderman.getComidaFavorita)
