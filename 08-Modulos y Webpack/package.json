@@ -4,7 +4,8 @@
   "description": "\"Este es un cascaron de un proyecto de webpack\"",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "author": "Jolberth Reyes",
   "license": "ISC",

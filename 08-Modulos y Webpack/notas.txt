@@ -14,3 +14,6 @@
 *****   Instalacion de webpack
         *****   Linea de comando
                 npm install webpack webpack-cli --save-dev
+
+*****   Aplicar configuraciones de webpack
+        npm run build    
