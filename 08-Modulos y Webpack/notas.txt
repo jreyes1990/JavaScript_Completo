@@ -1,0 +1,16 @@
+*****   Enlace de webpack
+        https://webpack.js.org/
+
+*****   Instalar lo siguiente, si en caso aun no esta instalado
+        *****   Verificar version de node js
+                node -v
+
+        *****   Verificar version de npm
+                npm -v
+
+        *****   Creacion de archivo package.json
+                npm init
+
+*****   Instalacion de webpack
+        *****   Linea de comando
+                npm install webpack webpack-cli --save-dev
