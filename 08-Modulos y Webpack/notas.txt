@@ -26,3 +26,10 @@
 
 *****   Ejecutando el server
         npm run start
+
+*****   Instalacion de css webpack
+        npm install --save-dev style-loader
+
+        npm install --save-dev css-loader
+
+        npm install --save-dev css-loader style-loader
