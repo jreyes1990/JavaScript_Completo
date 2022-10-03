@@ -39,3 +39,5 @@
 
 *****   Configuracion para la carga de imagenes
         npm install file-loader --save-dev
+
+        npm install copy-webpack-plugin --save-dev
