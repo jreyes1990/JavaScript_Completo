@@ -1,6 +1,9 @@
 *****   Enlace de webpack
         https://webpack.js.org/
 
+        https://v4.webpack.js.org/loaders/
+        
+
 *****   Instalar lo siguiente, si en caso aun no esta instalado
         *****   Verificar version de node js
                 node -v
