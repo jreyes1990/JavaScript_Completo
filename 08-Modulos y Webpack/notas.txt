@@ -20,3 +20,9 @@
 
 *****   Crear archivo de configuracion webpack
         webpack.config.js
+
+*****   Instalacion de Dev-Server, sus configuraciones en package.json
+        npm i -D webpack-dev-server
+
+*****   Ejecutando el server
+        npm run start
