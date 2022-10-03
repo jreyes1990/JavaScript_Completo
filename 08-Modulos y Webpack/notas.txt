@@ -33,3 +33,6 @@
         npm install --save-dev css-loader
 
         npm install --save-dev css-loader style-loader
+
+*****   Configuracion para crear archivos de forma global
+        npm install --save-dev mini-css-extract-plugin
