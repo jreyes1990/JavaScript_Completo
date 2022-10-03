@@ -2,7 +2,7 @@
         https://webpack.js.org/
 
         https://v4.webpack.js.org/loaders/
-        
+
 
 *****   Instalar lo siguiente, si en caso aun no esta instalado
         *****   Verificar version de node js
@@ -44,3 +44,15 @@
         npm install file-loader --save-dev
 
         npm install copy-webpack-plugin --save-dev
+
+
+*****   Enlace de Babel
+        https://babeljs.io/
+        https://babeljs.io/setup
+        https://babeljs.io/setup#installation
+
+*****   Instalacion de Babel
+        npm install --save-dev babel-loader @babel/core
+
+        *****   Creacion de Babel.config.json
+                npm install @babel/preset-env --save-dev

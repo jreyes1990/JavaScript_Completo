@@ -10,6 +10,26 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_componentes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/componentes */ \"./src/js/componentes.js\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n\n\n(0,_js_componentes__WEBPACK_IMPORTED_MODULE_0__.saludar)('Jolberth Lopez');\n\n//# sourceURL=webpack://webpack-inicial/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/componentes.js":
+/*!*******************************!*\
+  !*** ./src/js/componentes.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"saludar\": () => (/* binding */ saludar)\n/* harmony export */ });\n/* harmony import */ var _css_componentes_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/componentes.css */ \"./src/css/componentes.css\");\n/* harmony import */ var _assets_img_webpack_logo_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/img/webpack-logo.png */ \"./src/assets/img/webpack-logo.png\");\n\n\nvar saludar = function saludar(nombre) {\n  console.log('Creando etiqueta h1');\n  var h1 = document.createElement('h1');\n  h1.innerText = \"Hola , \".concat(nombre, \" !!!\");\n  document.body.append(h1); //Imagenes\n\n  console.log(_assets_img_webpack_logo_png__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n  var img = document.createElement('img');\n  img.src = _assets_img_webpack_logo_png__WEBPACK_IMPORTED_MODULE_1__[\"default\"];\n  document.body.append(img);\n};\n\n//# sourceURL=webpack://webpack-inicial/./src/js/componentes.js?");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/css/componentes.css":
 /*!***********************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/css/componentes.css ***!
@@ -127,26 +147,6 @@ eval("\n\n/* istanbul ignore next  */\nfunction apply(styleElement, options, obj
 /***/ ((module) => {
 
 eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElement) {\n  if (styleElement.styleSheet) {\n    styleElement.styleSheet.cssText = css;\n  } else {\n    while (styleElement.firstChild) {\n      styleElement.removeChild(styleElement.firstChild);\n    }\n\n    styleElement.appendChild(document.createTextNode(css));\n  }\n}\n\nmodule.exports = styleTagTransform;\n\n//# sourceURL=webpack://webpack-inicial/./node_modules/style-loader/dist/runtime/styleTagTransform.js?");
-
-/***/ }),
-
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_componentes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/componentes */ \"./src/js/componentes.js\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n\n\n\n(0,_js_componentes__WEBPACK_IMPORTED_MODULE_0__.saludar)('Jolberth Lopez');\n\n//# sourceURL=webpack://webpack-inicial/./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/js/componentes.js":
-/*!*******************************!*\
-  !*** ./src/js/componentes.js ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"saludar\": () => (/* binding */ saludar)\n/* harmony export */ });\n/* harmony import */ var _css_componentes_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/componentes.css */ \"./src/css/componentes.css\");\n/* harmony import */ var _assets_img_webpack_logo_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/img/webpack-logo.png */ \"./src/assets/img/webpack-logo.png\");\n\n\n\nconst saludar = (nombre) => {\n    console.log('Creando etiqueta h1')\n\n    const h1 = document.createElement('h1');\n    h1.innerText = `Hola , ${nombre} !!!`;\n    document.body.append(h1);\n\n    //Imagenes\n    console.log(_assets_img_webpack_logo_png__WEBPACK_IMPORTED_MODULE_1__[\"default\"])\n    const img = document.createElement('img');\n    img.src = _assets_img_webpack_logo_png__WEBPACK_IMPORTED_MODULE_1__[\"default\"];\n    document.body.append(img);\n}\n\n//# sourceURL=webpack://webpack-inicial/./src/js/componentes.js?");
 
 /***/ })
 
