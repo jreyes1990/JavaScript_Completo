@@ -17,3 +17,6 @@
 
 *****   Aplicar configuraciones de webpack
         npm run build    
+
+*****   Crear archivo de configuracion webpack
+        webpack.config.js
