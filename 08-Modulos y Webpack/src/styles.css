@@ -1,3 +1,7 @@
 body {
     background: rgba(137, 216, 137,.8);
 }
+
+img {
+    width: 150px;
+}

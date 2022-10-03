@@ -36,3 +36,6 @@
 
 *****   Configuracion para crear archivos de forma global
         npm install --save-dev mini-css-extract-plugin
+
+*****   Configuracion para la carga de imagenes
+        npm install file-loader --save-dev
