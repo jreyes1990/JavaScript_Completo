@@ -4,8 +4,10 @@ import { crearTodoHtml } from './js/componentes';
 
 export const todoList = new TodoList();
 
-const tarea = new Todo('Aprender Java Script !!');
-todoList.nuevoTodo(tarea);
+todoList.todos.forEach(todo => crearTodoHtml(todo));
+
+//const tarea = new Todo('Aprender Java Script !!');
+//todoList.nuevoTodo(tarea);
 
 //console.log(todoList)
 
