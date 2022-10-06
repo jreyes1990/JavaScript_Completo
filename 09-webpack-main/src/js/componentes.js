@@ -25,6 +25,7 @@ export const crearTodoHtml = (todo) => {
     return div;
 }
 
+
 //Eventos
 txtInput.addEventListener('keyup',(event) => {
     if (event.keyCode === 13 && txtInput.value.length > 0){
@@ -35,6 +36,7 @@ txtInput.addEventListener('keyup',(event) => {
         txtInput.value = '';
     }
 });
+
 
 divTodoList.addEventListener('click', (event) => {
     const nombreElemento = event.target.localName; //input, label, button
@@ -50,6 +52,7 @@ divTodoList.addEventListener('click', (event) => {
     }
 });
 
+
 btnBorrar.addEventListener('click', () => {
     todoList.eliminarCompletados();
 
@@ -61,3 +64,4 @@ btnBorrar.addEventListener('click', () => {
         }
     }
 });
+
