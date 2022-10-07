@@ -13,7 +13,7 @@ const heroes = {
     }
 }
 
-export const buscarHeroe = (id){
+export const buscarHeroe = (id) => {
     const heroe = heroes[id]
 
     return new Promise((resolve, reject) => {
