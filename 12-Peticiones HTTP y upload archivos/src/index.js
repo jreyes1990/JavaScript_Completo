@@ -19,6 +19,9 @@ CRUD.actualizarUsuario(1, {
     job: "Developer"
 }).then(console.log);
 
+
+CRUD.borrarUsuario(1).then(console.log);
+
 //obtenerUsuarios().then(console.log);
 
 //init();
