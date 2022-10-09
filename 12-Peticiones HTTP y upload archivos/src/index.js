@@ -7,6 +7,11 @@ import * as CRUD from './js/crud_usuarios-provider';
 
 CRUD.getUsuario(2).then(console.log);
 
+CRUD.crearUsuario({
+    name: "Jolberth",
+    job: "Planillero"
+}).then(console.log);
+
 //obtenerUsuarios().then(console.log);
 
 //init();
