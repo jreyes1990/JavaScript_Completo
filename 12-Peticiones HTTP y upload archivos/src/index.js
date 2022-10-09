@@ -1,13 +1,13 @@
 //import './styles.css';
 //import { saludar } from './js/componentes.js';
 //import { obtenerChiste } from './js/http-privider';
-//import { init } from "./js/chistes-page";
-import { obtenerUsuarios } from "./js/http-privider";
+import { init } from "./js/usuarios-page";
+//import { obtenerUsuarios } from "./js/http-privider";
 
 
-obtenerUsuarios().then(console.log);
+//obtenerUsuarios().then(console.log);
 
-//init();
+init();
 
 //obtenerChiste().then(console.log);
 
