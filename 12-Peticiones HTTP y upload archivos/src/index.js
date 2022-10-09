@@ -1,9 +1,12 @@
 //import './styles.css';
 //import { saludar } from './js/componentes.js';
-import { obtenerChiste } from './js/http-privider';
+//import { obtenerChiste } from './js/http-privider';
+import { init } from "./js/chistes-page";
 
 
-obtenerChiste().then(console.log);
+init();
+
+//obtenerChiste().then(console.log);
 
 /*
 const jokeUrl = 'https://api.chucknorris.io/jokes/random';
